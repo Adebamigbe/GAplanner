@@ -1,4 +1,19 @@
 GAplanner::Application.routes.draw do
+  root to:  "courses#index"
+
+  resources :courses
+  resources :users
+  resources :classrooms
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :users, only: [:index, :new, :create]
+
+  get "/signup", to: "users#new",         as: "signup"
+  get "/login",  to: "sessions#new" ,     as: "login"
+  delete "/logout", to: "sessions#destroy",  as: "logout"
+  get "/courses/:course_id/subscribe", to: "courses#subscribe"
+
+end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -55,4 +70,3 @@ GAplanner::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
-end

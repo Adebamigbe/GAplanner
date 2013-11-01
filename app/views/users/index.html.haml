@@ -1,0 +1,27 @@
+%h1 GA Users
+- if can? :create, User
+  = link_to "New User", new_user_path
+
+- if can? :list_admin, User
+  = link_to('List Users', users_path)
+
+- if can? :manage, User
+  = link_to('Course List', courses_path)
+
+
+
+- for user in @users
+
+
+  %p First Name:
+  = user.first_name
+
+  %p Last Name:
+  = user.last_name
+
+  %p Email:
+  = user.email
+
+  %p Image:
+  = image_tag user.image
+  %hr

@@ -1,0 +1,34 @@
+!!!
+%html
+  %head
+    %title GA Planner
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    #page
+      .wrapper
+        %nav
+          %h1
+            GA Planner
+          %ul.right-nav
+            %li= link_to('Courses', courses_path)
+            %li= link_to('Classrooms', classrooms_path)
+            %li= link_to('Users', users_path)
+          %span.log
+            %ul
+              %li
+                - if current_user
+                  %p
+                    hello, #{current_user.email}
+                    = link_to 'Logout', logout_path, method: :delete, data: {confirm:"Are you sure?"}
+                - else
+                  = link_to 'Please login', login_path
+                  or
+                  = link_to 'Please Signup', signup_path
+      - flash.each do |name, message|
+        %div(class="flash-message flash-#{name}")
+          = message
+
+      %section#main
+        = yield

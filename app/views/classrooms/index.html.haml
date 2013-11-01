@@ -1,0 +1,11 @@
+%h1 Classrooms
+%p= link_to "New Classroom", new_classroom_path
+
+- for classroom in @classrooms
+
+  %p classroom name
+  = classroom.class_name
+
+  %p Spaces Available
+  = classroom.class_space
+  %hr

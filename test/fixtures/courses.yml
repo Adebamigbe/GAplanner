@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  course_code: MyString
+  course_name: MyString
+  description: MyText
+  price: 1.5
+  space: 1
+  start_date: 2013-10-29
+  end_date: 2013-10-29
+  start_time: 2013-10-29 14:09:46
+  end_time: 2013-10-29 14:09:46
+
+two:
+  course_code: MyString
+  course_name: MyString
+  description: MyText
+  price: 1.5
+  space: 1
+  start_date: 2013-10-29
+  end_date: 2013-10-29
+  start_time: 2013-10-29 14:09:46
+  end_time: 2013-10-29 14:09:46

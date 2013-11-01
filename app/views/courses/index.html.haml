@@ -1,0 +1,35 @@
+%h1 Courses
+- if current_user
+  %p= link_to "Add Courses", new_course_path
+
+- for course in @courses
+
+  = link_to course.course_name, course
+
+  %p course description
+  = course.description
+
+  %ul
+    - for user in course.users
+      %li
+        = user.name
+
+  - if can? :delete, Course
+    %br/
+    = link_to "delete", course, method: :delete, confirm: "Are you sure?"
+
+  - if can? :edit, Course
+    %br/
+    = link_to "edit", edit_course_path(course)
+
+  %br/
+  = link_to "show", course
+  - if current_user
+    = link_to "Subscribe", "/courses/#{course.id}/subscribe"
+    %p Students
+    - course.users.each do |user|
+      = user.first_name
+      %br
+
+
+  %hr

@@ -1,0 +1,33 @@
+= form_for @user do |f|
+
+  %fieldset
+    .field
+      = f.label :first_name
+      = f.text_field :first_name
+    .field
+      = f.label :last_name
+      = f.text_field :last_name
+    .field
+      = f.label :dob
+      = f.number_field :dob
+    .field
+      = f.label :email
+      = f.text_field :email
+    .field
+      = f.label :image
+      = f.file_field :image
+    .field
+      = f.label :phone
+      = f.text_field :phone
+    .field
+      = f.label :password
+      %br/
+      = f.password_field :password
+    .field
+      = f.label :password_confirmation, "Confirmation"
+      %br/
+      = f.password_field :password_confirmation
+
+  %br/
+  .actions
+    = f.submit 'Save'

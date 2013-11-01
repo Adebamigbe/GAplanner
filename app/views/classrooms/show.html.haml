@@ -1,0 +1,20 @@
+%h1= @classroom.name
+
+
+%p
+  code:
+  = @classroom.class_name
+  %br
+
+  description:
+  = @classroom.description
+  %br
+
+%p
+  = link_to "Add a Course", new_classroom_course_path(@course)
+  \|
+  = link_to "Edit Classroom", edit_classroom_path(@classroom)
+  \|
+  = link_to "Remove Classroom", @classroom, :confirm => 'Are you sure?', :method => :delete
+  \|
+  = link_to "View Classrooms", classrooms_path

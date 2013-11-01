@@ -1,5 +1,5 @@
 %h1 Courses
-- if current_user
+- if current_user and current_user.role == 'admin'
   %p= link_to "Add Courses", new_course_path
 
 - for course in @courses

@@ -8,4 +8,8 @@
 
   %p Spaces Available
   = classroom.class_space
+
+  %p Courses
+  - classroom.courses.each do |course|
+    = course.course_name
   %hr

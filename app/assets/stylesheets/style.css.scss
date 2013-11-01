@@ -2,6 +2,11 @@
 //   display: inline;
 // }
 
+body {
+  margin:0;
+  padding:0;
+}
+
 a {
   text-decoration: none;
 
@@ -11,7 +16,6 @@ a {
 }
 
 nav {
-
   margin: 20px;
 
   .navbar {
@@ -30,6 +34,8 @@ nav {
 
   h1, ul {
     display: inline-block;
+    line-height: 80px;
+    height: 80px;
   }
 }
 
@@ -57,4 +63,13 @@ body {
   p {
     font-size: 22px;
   }
+}
+
+label {display:block;}
+
+.left {float:left;}
+
+.logo {
+  color: #333;
+  font-size: 43px;
 }
